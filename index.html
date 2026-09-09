@@ -31,12 +31,8 @@
     .section-title{text-align:center;margin-bottom:38px}
     .section-title h2{font-size:2.4rem;line-height:1.1}
     .section-title p{color:var(--muted);margin-top:8px}
-    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .menu-card{background:#fff;border-radius:20px;padding:25px;box-shadow:0 8px 25px rgba(70,20,5,.1);border-top:6px solid var(--red)}
-    .menu-card h3{font-size:1.45rem;margin-bottom:14px;color:var(--red)}
-    .item{display:flex;justify-content:space-between;gap:15px;padding:11px 0;border-bottom:1px dashed #d9b8a7}
-    .item:last-child{border-bottom:0}
-    .price{font-weight:900;white-space:nowrap}
+    .menu-image-wrap{display:flex;justify-content:center}
+    .menu-image{width:100%;max-width:1024px;height:auto;display:block;border-radius:24px;box-shadow:0 12px 30px rgba(70,20,5,.16);border:4px solid #fff}
 
     .about{background:linear-gradient(135deg,#fff5df 0%,#ffe0bd 100%)}
     .about-wrap{display:grid;grid-template-columns:1fr 1.35fr;gap:42px;align-items:center}
@@ -72,7 +68,7 @@
     footer p{color:#e8cbbb;font-size:.9rem;margin-top:4px}
     @media(max-width:800px){
       .links a:not(.nav-order){display:none}
-      .menu-grid,.product-grid,.why-grid,.about-wrap{grid-template-columns:1fr}
+      .product-grid,.why-grid,.about-wrap{grid-template-columns:1fr}
       .about-logo img{width:240px;max-height:240px}
       .about-copy{padding:26px}
       .social-grid{grid-template-columns:repeat(2,1fr)}
@@ -117,32 +113,16 @@
 </header>
 
 <section id="menu">
-  <div class="section-title">
-    <h2>Our Menu</h2>
-    <p>Hot, crispy, cheesy and oh-so-satisfying.</p>
-  </div>
-  <div class="menu-grid">
-    <div class="menu-card">
-      <h3>1. Classic</h3>
-      <div class="item"><span>Hotdog &amp; Cheese</span><span class="price">₱25</span></div>
-      <div class="item"><span>Ham &amp; Cheese</span><span class="price">₱25</span></div>
-      <div class="item"><span>Hawaiian</span><span class="price">₱30</span></div>
-    </div>
-    <div class="menu-card">
-      <h3>2. Classic Bundle</h3>
-      <div class="item"><span>Ham &amp; Cheese — 3 pcs</span><span class="price">₱70</span></div>
-      <div class="item"><span>Hotdog &amp; Cheese — 3 pcs</span><span class="price">₱70</span></div>
-      <div class="item"><span>Hawaiian Bundle — 3 pcs</span><span class="price">₱85</span></div>
-    </div>
-    <div class="menu-card">
-      <h3>3. Assorted</h3>
-      <div class="item"><span>Hotdog / Ham / Hawaiian</span><span class="price">₱75</span></div>
-    </div>
-  </div>
-</section>
+      <div class="section-title">
+        <h2>Our Menu</h2>
+        <p>Hot, crispy, cheesy and oh-so-satisfying.</p>
+      </div>
+      <div class="menu-image-wrap">
+        <img class="menu-image" src="images/menu.jpeg" alt="Rollin Pizza menu with Classic, Classic Bundle, and Assorted pizza roll prices">
+      </div>
+    </section>
 
-
-<section class="about" id="about">
+    <section class="about" id="about">
   <div class="about-wrap">
     <div class="about-logo">
       <img src="images/logo.jpeg" alt="Rollin Pizza mascot and logo">
