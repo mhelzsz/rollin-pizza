@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rollin Pizza — crispy, cheesy and delicious pizza rolls. Roll it. Love it. Repeat!">
+  <title>Rollin Pizza | Roll It. Love It. Repeat!</title>
+  <style>
+    :root{
+      --red:#b71916; --deep:#260d0b; --gold:#ffb515; --orange:#f45b1a;
+      --cream:#fff5df; --white:#fff; --muted:#6e4b3d;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--cream);color:var(--deep);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(38,13,11,.97);color:#fff;box-shadow:0 3px 15px rgba(0,0,0,.2)}
+    .nav-inner{max-width:1150px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.25rem}
+    .brand img{width:48px;height:48px;object-fit:cover;border-radius:50%;background:#fff}
+    .links{display:flex;gap:22px;align-items:center;font-weight:700;font-size:.95rem}
+    .links a:hover{color:var(--gold)}
+    .nav-order{background:var(--gold);color:var(--deep);padding:10px 17px;border-radius:999px}
+    .hero{background:#140807;overflow:hidden}
+    .hero img{width:100%;display:block;max-height:620px;object-fit:cover;object-position:center}
+    .hero-actions{display:flex;justify-content:center;gap:12px;padding:22px;background:#140807}
+    .btn{display:inline-block;border:0;border-radius:999px;padding:13px 22px;font-weight:900;cursor:pointer}
+    .btn-primary{background:var(--gold);color:var(--deep)}
+    .btn-secondary{background:transparent;color:#fff;border:2px solid #fff}
+    section{max-width:1150px;margin:auto;padding:72px 20px}
+    .section-title{text-align:center;margin-bottom:38px}
+    .section-title h2{font-size:2.4rem;line-height:1.1}
+    .section-title p{color:var(--muted);margin-top:8px}
+    .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .menu-card{background:#fff;border-radius:20px;padding:25px;box-shadow:0 8px 25px rgba(70,20,5,.1);border-top:6px solid var(--red)}
+    .menu-card h3{font-size:1.45rem;margin-bottom:14px;color:var(--red)}
+    .item{display:flex;justify-content:space-between;gap:15px;padding:11px 0;border-bottom:1px dashed #d9b8a7}
+    .item:last-child{border-bottom:0}
+    .price{font-weight:900;white-space:nowrap}
+    .products{background:#fffaf0}
+    .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .product-card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 8px 25px rgba(70,20,5,.12)}
+    .product-card img{width:100%;height:230px;object-fit:cover;display:block}
+    .product-body{padding:20px}
+    .product-body h3{font-size:1.35rem;color:var(--red)}
+    .product-body p{color:var(--muted);margin-top:5px}
+    .why{background:var(--red);color:#fff}
+    .why .section-title p{color:#ffe9d0}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .why-card{text-align:center;padding:25px;border:1px solid rgba(255,255,255,.25);border-radius:18px}
+    .why-card .icon{font-size:2.2rem}
+    .why-card h3{margin:8px 0 5px}
+    .order-box{background:var(--deep);color:#fff;border-radius:28px;padding:45px 30px;text-align:center}
+    .order-box p{color:#f9dcc7;max-width:700px;margin:10px auto 24px}
+    .order-links{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+    .social{background:#fff}
+    .social-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .social-card{background:var(--cream);padding:18px;border-radius:16px;text-align:center;font-weight:800}
+    .social-card span{display:block;font-size:1.5rem;margin-bottom:5px}
+    footer{background:var(--deep);color:#fff;text-align:center;padding:28px 20px}
+    footer p{color:#e8cbbb;font-size:.9rem;margin-top:4px}
+    @media(max-width:800px){
+      .links a:not(.nav-order){display:none}
+      .menu-grid,.product-grid,.why-grid{grid-template-columns:1fr}
+      .social-grid{grid-template-columns:repeat(2,1fr)}
+      .section-title h2{font-size:2rem}
+      .hero img{min-height:250px;object-fit:cover}
+    }
+    @media(max-width:480px){
+      .nav-inner{padding:8px 12px}
+      .brand{font-size:1rem}
+      .brand img{width:40px;height:40px}
+      .nav-order{padding:8px 12px}
+      .hero-actions{padding:15px 10px}
+      .btn{padding:11px 16px}
+      section{padding:55px 15px}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#home">
+      <img src="images/logo.jpeg" alt="Rollin Pizza logo">
+      <span>ROLLIN PIZZA</span>
+    </a>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#products">Our Pizza Rolls</a>
+      <a href="#order" class="nav-order">Order Now 🍕</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <img src="images/hero-banner.png" alt="Rollin Pizza — Roll It. Love It. Repeat!">
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="#order">ORDER NOW 🍕</a>
+    <a class="btn btn-secondary" href="#menu">VIEW MENU</a>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="section-title">
+    <h2>Our Menu</h2>
+    <p>Hot, crispy, cheesy and oh-so-satisfying.</p>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <h3>1. Classic</h3>
+      <div class="item"><span>Hotdog &amp; Cheese</span><span class="price">₱25</span></div>
+      <div class="item"><span>Ham &amp; Cheese</span><span class="price">₱25</span></div>
+      <div class="item"><span>Hawaiian</span><span class="price">₱30</span></div>
+    </div>
+    <div class="menu-card">
+      <h3>2. Classic Bundle</h3>
+      <div class="item"><span>Ham &amp; Cheese — 3 pcs</span><span class="price">₱70</span></div>
+      <div class="item"><span>Hotdog &amp; Cheese — 3 pcs</span><span class="price">₱70</span></div>
+      <div class="item"><span>Hawaiian Bundle — 3 pcs</span><span class="price">₱85</span></div>
+    </div>
+    <div class="menu-card">
+      <h3>3. Assorted</h3>
+      <div class="item"><span>Hotdog / Ham / Hawaiian</span><span class="price">₱75</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="section-title">
+    <h2>Our Pizza Rolls</h2>
+    <p>Pick your favorite and get rollin'!</p>
+  </div>
+  <div class="product-grid">
+    <article class="product-card">
+      <img src="images/ham-cheese.jpeg" alt="Ham and Cheese Pizza Roll">
+      <div class="product-body">
+        <h3>Ham &amp; Cheese</h3>
+        <p>Juicy ham, melty cheese and a golden crispy outside.</p>
+      </div>
+    </article>
+    <article class="product-card">
+      <img src="images/classic.jpeg" alt="Classic Pizza Roll">
+      <div class="product-body">
+        <h3>Classic</h3>
+        <p>A cheesy, savory classic made to satisfy every bite.</p>
+      </div>
+    </article>
+    <article class="product-card">
+      <img src="images/hawaiian.jpeg" alt="Hawaiian Pizza Roll">
+      <div class="product-body">
+        <h3>Hawaiian</h3>
+        <p>A sweet and savory Hawaiian-style pizza roll with a cheesy center.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="why">
+  <div class="section-title">
+    <h2>Why Rollin Pizza?</h2>
+    <p>Simple. Satisfying. Always delicious.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card"><div class="icon">🧀</div><h3>Cheesy Goodness</h3><p>Loaded with delicious, melty flavor.</p></div>
+    <div class="why-card"><div class="icon">🔥</div><h3>Crispy &amp; Hot</h3><p>Golden on the outside and satisfying inside.</p></div>
+    <div class="why-card"><div class="icon">😋</div><h3>Made to Crave</h3><p>Perfect for merienda, parties and snack time.</p></div>
+  </div>
+</section>
+
+<section id="order">
+  <div class="order-box">
+    <h2>Ready to Get Rollin'? 🍕</h2>
+    <p>Place your order through our online form, or message us directly on Facebook or Instagram.</p>
+    <div class="order-links">
+      <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeRl751yeaPZ7ExvyRnhoLrnaU_OH6zzNY6WH04KHBi_g7KVQ/viewform?usp=publish-editor" target="_blank" rel="noopener">📝 ORDER FORM</a>
+      <a class="btn btn-secondary" href="https://www.facebook.com/profile.php?id=61593544316118" target="_blank" rel="noopener">💬 MESSENGER</a>
+      <a class="btn btn-secondary" href="tel:09500845428">📱 CALL / TEXT</a>
+    </div>
+  </div>
+</section>
+
+<section class="social">
+  <div class="section-title">
+    <h2>Follow Rollin Pizza</h2>
+    <p>Follow us for more rollin' goodness!</p>
+  </div>
+  <div class="social-grid">
+    <a class="social-card" href="https://www.facebook.com/profile.php?id=61593544316118" target="_blank" rel="noopener"><span>📘</span>Facebook</a>
+    <a class="social-card" href="https://www.instagram.com/pizzarollin.ph" target="_blank" rel="noopener"><span>📸</span>Instagram</a>
+    <a class="social-card" href="https://www.tiktok.com/@fashira.company" target="_blank" rel="noopener"><span>🎵</span>TikTok</a>
+    <a class="social-card" href="tel:09500845428"><span>📱</span>0950 084 5428</a>
+  </div>
+</section>
+
+<footer>
+  <strong>ROLLIN PIZZA</strong>
+  <p>Roll it. Love it. Repeat! ❤️</p>
+</footer>
+
+</body>
+</html>
