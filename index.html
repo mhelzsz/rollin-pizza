@@ -67,27 +67,59 @@
     .social-card span{display:block;font-size:1.5rem;margin-bottom:5px}
     footer{background:var(--deep);color:#fff;text-align:center;padding:28px 20px}
     footer p{color:#e8cbbb;font-size:.9rem;margin-top:4px}
+    .menu-toggle{display:none;background:transparent;color:#fff;border:0;font-size:1.7rem;line-height:1;padding:6px;cursor:pointer}
     @media(max-width:800px){
-      .menu-image-wrap{padding:0}
-      .menu-image{max-width:100%;border-radius:16px;border-width:3px}
+      .nav-inner{position:relative}
+      .menu-toggle{display:block;margin-left:auto;margin-right:6px}
+      .links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(38,13,11,.98);padding:10px 15px 14px;flex-direction:column;gap:0;box-shadow:0 8px 15px rgba(0,0,0,.18)}
+      .links.open{display:flex}
+      .links a{display:block!important;width:100%;padding:10px 6px;text-align:center}
+      .links .nav-order{margin-top:5px}
 
-      .links a:not(.nav-order){display:none}
+      .menu-image-wrap{padding:0}
+      .menu-image{max-width:100%;border-radius:14px;border-width:3px}
       .product-grid,.why-grid,.about-wrap{grid-template-columns:1fr}
-      .about-logo img{width:240px;max-height:240px}
-      .about-copy{padding:26px}
-      .social-grid{grid-template-columns:repeat(2,1fr)}
-      .section-title h2{font-size:2rem}
-      .hero img{min-height:250px;object-fit:cover}
+      .about-logo img{width:190px;max-height:190px}
+      .about-copy{padding:22px;border-left-width:5px;border-radius:18px}
+      .about-copy h2{font-size:1.75rem}
+      .social-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+      .section-title{margin-bottom:24px}
+      .section-title h2{font-size:1.8rem}
+      .section-title p{font-size:.95rem}
+      .hero img{min-height:220px;object-fit:cover}
+      .hero-actions{gap:9px;padding:14px 10px}
+      .btn{padding:10px 15px;font-size:.9rem}
+      section{padding:42px 14px}
+      .product-grid{gap:16px}
+      .product-card{border-radius:18px}
+      .product-card img{height:auto;aspect-ratio:1.5/1;object-fit:cover}
+      .product-body{padding:16px}
+      .product-body h3{font-size:1.2rem}
+      .product-body p{font-size:.94rem}
+      .why-grid{gap:12px}
+      .why-card{padding:20px 15px}
+      .order-box{padding:30px 18px;border-radius:22px}
+      .order-box h2{font-size:1.65rem}
+      .order-box p{font-size:.95rem}
+      .order-links{gap:9px}
     }
     @media(max-width:480px){
       .nav-inner{padding:6px 10px}
-      .brand{font-size:.92rem;gap:7px}
+      .brand{font-size:.88rem;gap:7px}
       .brand img{width:38px;height:38px}
-      .nav-order{padding:7px 11px;font-size:.82rem}
-      section[id]{scroll-margin-top:64px}
-      .hero-actions{padding:15px 10px}
-      .btn{padding:11px 16px}
-      section{padding:55px 15px}
+      .menu-toggle{font-size:1.55rem}
+      .nav-order{padding:7px 10px;font-size:.78rem}
+      section[id]{scroll-margin-top:58px}
+      .hero img{min-height:190px}
+      .hero-actions{padding:12px 8px}
+      .btn{padding:9px 13px;font-size:.84rem}
+      section{padding:38px 12px}
+      .menu-image{border-radius:12px}
+      .about-copy{padding:19px}
+      .about-copy h2{font-size:1.55rem}
+      .about-copy p{font-size:.92rem;margin-bottom:11px}
+      .social-card{padding:15px 8px;font-size:.9rem}
+      .social-card span{font-size:1.3rem}
     }
   </style>
 </head>
@@ -99,6 +131,7 @@
       <img src="images/logo.jpeg" alt="Rollin Pizza logo">
       <span>ROLLIN PIZZA</span>
     </a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <div class="links">
       <a href="#home">Home</a>
       <a href="#menu">Menu</a>
@@ -215,5 +248,21 @@
   <p>Roll it. Love it. Repeat! ❤️</p>
 </footer>
 
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('.links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.textContent = open ? '✕' : '☰';
+  });
+  document.querySelectorAll('.links a').forEach(link => {
+    link.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    });
+  });
+</script>
 </body>
 </html>
