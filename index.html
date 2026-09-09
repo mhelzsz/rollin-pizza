@@ -31,8 +31,8 @@
     .section-title{text-align:center;margin-bottom:38px}
     .section-title h2{font-size:2.4rem;line-height:1.1}
     .section-title p{color:var(--muted);margin-top:8px}
-    .menu-image-wrap{display:flex;justify-content:center}
-    .menu-image{width:100%;max-width:1024px;height:auto;display:block;border-radius:24px;box-shadow:0 12px 30px rgba(70,20,5,.16);border:4px solid #fff}
+    .menu-image-wrap{display:flex;justify-content:center;padding:0 12px}
+    .menu-image{width:100%;max-width:900px;height:auto;display:block;border-radius:24px;box-shadow:0 12px 30px rgba(70,20,5,.16);border:4px solid #fff;box-sizing:border-box}
 
     .about{background:linear-gradient(135deg,#fff5df 0%,#ffe0bd 100%)}
     .about-wrap{display:grid;grid-template-columns:1fr 1.35fr;gap:42px;align-items:center}
@@ -67,6 +67,9 @@
     footer{background:var(--deep);color:#fff;text-align:center;padding:28px 20px}
     footer p{color:#e8cbbb;font-size:.9rem;margin-top:4px}
     @media(max-width:800px){
+      .menu-image-wrap{padding:0}
+      .menu-image{max-width:100%;border-radius:16px;border-width:3px}
+
       .links a:not(.nav-order){display:none}
       .product-grid,.why-grid,.about-wrap{grid-template-columns:1fr}
       .about-logo img{width:240px;max-height:240px}
