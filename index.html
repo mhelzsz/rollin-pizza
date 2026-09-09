@@ -37,6 +37,17 @@
     .item{display:flex;justify-content:space-between;gap:15px;padding:11px 0;border-bottom:1px dashed #d9b8a7}
     .item:last-child{border-bottom:0}
     .price{font-weight:900;white-space:nowrap}
+
+    .about{background:linear-gradient(135deg,#fff5df 0%,#ffe0bd 100%)}
+    .about-wrap{display:grid;grid-template-columns:1fr 1.35fr;gap:42px;align-items:center}
+    .about-logo{display:flex;justify-content:center;align-items:center}
+    .about-logo img{width:min(100%,360px);max-height:360px;object-fit:contain;filter:drop-shadow(0 14px 18px rgba(45,10,5,.18))}
+    .about-copy{background:#fff;border-radius:24px;padding:35px;box-shadow:0 8px 25px rgba(70,20,5,.1);border-left:7px solid var(--red)}
+    .about-copy .eyebrow{font-weight:900;color:var(--orange);letter-spacing:1.5px;text-transform:uppercase;font-size:.9rem}
+    .about-copy h2{font-size:2.35rem;line-height:1.1;margin:7px 0 16px;color:var(--red)}
+    .about-copy p{color:var(--muted);margin-bottom:14px}
+    .about-tagline{font-weight:900;color:var(--deep)!important;font-size:1.05rem;margin-top:18px!important}
+
     .products{background:#fffaf0}
     .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
     .product-card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 8px 25px rgba(70,20,5,.12)}
@@ -61,7 +72,9 @@
     footer p{color:#e8cbbb;font-size:.9rem;margin-top:4px}
     @media(max-width:800px){
       .links a:not(.nav-order){display:none}
-      .menu-grid,.product-grid,.why-grid{grid-template-columns:1fr}
+      .menu-grid,.product-grid,.why-grid,.about-wrap{grid-template-columns:1fr}
+      .about-logo img{width:240px;max-height:240px}
+      .about-copy{padding:26px}
       .social-grid{grid-template-columns:repeat(2,1fr)}
       .section-title h2{font-size:2rem}
       .hero img{min-height:250px;object-fit:cover}
@@ -88,6 +101,7 @@
     <div class="links">
       <a href="#home">Home</a>
       <a href="#menu">Menu</a>
+      <a href="#about">About</a>
       <a href="#products">Our Pizza Rolls</a>
       <a href="#order" class="nav-order">Order Now 🍕</a>
     </div>
@@ -123,6 +137,23 @@
     <div class="menu-card">
       <h3>3. Assorted</h3>
       <div class="item"><span>Hotdog / Ham / Hawaiian</span><span class="price">₱75</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="about" id="about">
+  <div class="about-wrap">
+    <div class="about-logo">
+      <img src="images/logo.jpeg" alt="Rollin Pizza mascot and logo">
+    </div>
+    <div class="about-copy">
+      <div class="eyebrow">About Rollin Pizza</div>
+      <h2>Roll Into Your Cravings! 🍕</h2>
+      <p>Rollin Pizza is your go-to treat when cravings hit! We serve delicious pizza snacks that are crispy on the outside, cheesy and savory on the inside, and packed with flavor in every bite.</p>
+      <p>With a variety of exciting flavors to choose from, Rollin Pizza is perfect for merienda, quick cravings, and sharing with friends and family.</p>
+      <p>Roll into your cravings, choose your favorite flavor, and enjoy a deliciously crispy and cheesy experience!</p>
+      <p class="about-tagline">Roll it. Love it. Repeat! ❤️</p>
     </div>
   </div>
 </section>
